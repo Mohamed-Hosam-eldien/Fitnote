@@ -1,4 +1,14 @@
 <resources>
     <string name="app_name">Fitnote</string>
     <string name="google_maps_key">AIzaSyDmRb43UfSeRuMysVRx924LKaWbzjqFavc</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="let_s_go">Let\'s Go..</string>
+    <string name="name">Name</string>
+    <string name="weight">Weight</string>
+    <string name="continuee">Continue</string>
+    <string name="skip">Skip</string>
+    <string name="home">Home</string>
+    <string name="workout">Workout</string>
+    <string name="statistics">Statistics</string>
+    <string name="settings">Settings</string>
 </resources>

@@ -2,7 +2,8 @@ package com.codingtester.fitnote.di
 
 import android.content.Context
 import androidx.room.Room
-import com.codingtester.fitnote.common.Constants
+import com.codingtester.fitnote.data.local.ILocalDataSource
+import com.codingtester.fitnote.helper.Constants
 import com.codingtester.fitnote.data.local.db.RunDatabase
 import dagger.Module
 import dagger.Provides
