@@ -98,5 +98,7 @@ dependencies {
 
     implementation 'android.arch.lifecycle:extensions:1.1.1'
 
+    // Floating button
+    implementation 'com.github.clans:fab:1.6.4'
 
 }
