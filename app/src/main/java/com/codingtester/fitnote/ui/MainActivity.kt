@@ -1,5 +1,6 @@
 package com.codingtester.fitnote.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -8,6 +9,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.codingtester.fitnote.R
 import com.codingtester.fitnote.databinding.ActivityMainBinding
+import com.codingtester.fitnote.helper.Constants.ACTION_SHOW_TRACKING_FRAGMENT_FROM_NOTIFICATION
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -21,6 +23,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        navigateToTrackingFragmentFromNotification(intent)
 
         navController = findNavController(R.id.navHost)
 
@@ -41,11 +45,21 @@ class MainActivity : AppCompatActivity() {
             navController.navigate(R.id.action_homeFragment_to_trackingFragment)
         }
 
-
     }
 
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp() || super.onSupportNavigateUp()
+    }
+
+    override fun onNewIntent(intent: Intent?) {
+        super.onNewIntent(intent)
+        navigateToTrackingFragmentFromNotification(intent)
+    }
+
+    private fun navigateToTrackingFragmentFromNotification(intent: Intent?){
+        if(intent?.action == ACTION_SHOW_TRACKING_FRAGMENT_FROM_NOTIFICATION){
+            findNavController(R.id.navHost).navigate(R.id.action_notification_to_trackingFragment)
+        }
     }
 
 }
