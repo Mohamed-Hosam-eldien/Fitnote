@@ -2,7 +2,9 @@ package com.codingtester.fitnote.helper
 
 import android.Manifest
 import android.content.Context
+import android.location.Location
 import android.os.Build
+import com.codingtester.fitnote.services.Polyline
 import pub.devrel.easypermissions.EasyPermissions
 import java.util.concurrent.TimeUnit
 
@@ -38,8 +40,27 @@ object TrackingUtility {
 
         return "${if(hours < 10) "0" else ""}$hours:" +
                 "${if(minutes < 10) "0" else ""}$minutes:" +
-                "${if(seconds < 10) "0" else ""}$seconds:" +
-                if(includeMillis) "${if(milliseconds < 10) "0" else ""}$milliseconds" else ""
+                "${if(seconds < 10) "0" else ""}$seconds" +
+                if(includeMillis) "${if(milliseconds < 10) ":0" else ":"}$milliseconds" else ""
+    }
+
+    fun calculateTrackingLength(polyline: Polyline): Float {
+        var distance = 0f
+        for(index in 0..polyline.size - 2) {
+            val pos1 = polyline[index]
+            val pos2= polyline[index + 1]
+
+            val result = FloatArray(1)
+            Location.distanceBetween(
+                pos1.latitude,
+                pos1.longitude,
+                pos2.latitude,
+                pos2.longitude,
+                result
+            )
+            distance += result[0]
+        }
+        return distance
     }
 
 }

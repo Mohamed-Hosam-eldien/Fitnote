@@ -20,4 +20,27 @@
     <string name="pause">Pause</string>
     <string name="finish">Finish</string>
     <string name="resume">Resume</string>
+    <string name="cancel_run">cancel_run</string>
+    <string name="cancel_run_dialog">Cancel Run!</string>
+    <string name="canel_run_dialog_message">Are you sure to cancel current run?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="keep_going">keep going</string>
+    <string name="taking_abreak">taking a break</string>
+    <string name="saved_successffuly">Saved Successfully</string>
+    <string name="sorted_by">Sorted by</string>
+    <string name="date">Date</string>
+    <string name="speed">Speed</string>
+    <string name="cal">Calories</string>
+    <string name="distance">Distance</string>
+    <string name="time">Time</string>
+
+    <string-array name="sorted_type" >
+        <item>Date</item>
+        <item>Time</item>
+        <item>Distance</item>
+        <item>Speed</item>
+        <item>Calories</item>
+    </string-array>
+
 </resources>

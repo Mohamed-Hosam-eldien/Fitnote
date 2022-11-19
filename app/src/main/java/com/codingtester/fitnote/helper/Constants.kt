@@ -1,6 +1,6 @@
 package com.codingtester.fitnote.helper
 
-import com.codingtester.fitnote.R
+import android.graphics.Color
 
 object Constants {
 
@@ -18,9 +18,14 @@ object Constants {
 
     const val TIMER_UPDATE_INTERVAL = 50L
 
-    const val POLYLINE_COLOR = R.color.teal_200
-    const val POLYLINE_WIDTH = 14f
-    const val CAMERA_ZOOM = 16f
+    const val POLYLINE_COLOR = Color.RED
+    const val POLYLINE_WIDTH = 13f
+    const val CAMERA_ZOOM = 15f
+
+    const val SHARED_PREF_NAME = "runningShared"
+    const val USER_NAME = "name"
+    const val USER_WEIGHT = "weight"
+    const val USER_FIRST_SIGNED = "firstSign"
 
     const val NOTIFICATION_CHANNEL_ID = "Fitnote"
     const val NOTIFICATION_CHANNEL_NAME = "Tracking Channel"

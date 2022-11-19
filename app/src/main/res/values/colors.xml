@@ -12,8 +12,11 @@
     <color name="blackGray2">#333333</color>
     <color name="blackGray3">#4D4D4D</color>
 
-    <color name="blackGrayTrans">#90222222</color>
+    <color name="second_color">#FF5722</color>
 
-    <color name="blackGreenTrans">#946C057E</color>
+    <color name="blackGrayTrans">#90222222</color>
+    <color name="transparent">#00FFFFFF</color>
+
+    <color name="blackGreenTrans">#94F2A5FF</color>
 
 </resources>

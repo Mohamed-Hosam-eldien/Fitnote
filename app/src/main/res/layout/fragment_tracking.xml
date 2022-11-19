@@ -13,6 +13,46 @@
         android:layout_height="match_parent"
         tools:context=".ui.fragments.TrackingFragment">
 
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/purple_200">
+
+            <ImageView
+                android:id="@+id/imgBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@null"
+                android:padding="12dp"
+                android:src="@drawable/ic_arrow_back_24" />
+
+            <TextView
+                android:id="@+id/txtRunningState"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/let_s_go"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <ImageView
+                android:id="@+id/img_cancel_run"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_close_24"
+                android:layout_marginEnd="12sp"
+                android:padding="12dp"
+                android:visibility="invisible"
+                android:layout_marginTop="8dp"
+                android:layout_gravity="end"
+                android:contentDescription="@null" />
+
+        </androidx.appcompat.widget.Toolbar>
+
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
             android:layout_width="match_parent"
@@ -20,15 +60,7 @@
             app:cardElevation="32dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <ImageView
-                android:id="@+id/imgBack"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_arrow_back_24"
-                android:padding="12dp"
-                android:contentDescription="@null" />
+            app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -45,7 +77,7 @@
                     android:fontFamily="sans-serif-smallcaps"
                     android:text="@string/_00_00_00"
                     android:textColor="@color/blackGray2"
-                    android:textSize="50sp"
+                    android:textSize="46sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
@@ -167,64 +199,72 @@
             android:id="@+id/mapView"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/buttonsLayout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/cardView" />
 
-        <Button
-            android:id="@+id/btnStart"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:padding="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:backgroundTint="@color/blackGrayTrans"
-            android:text="@string/start_run"/>
-
         <LinearLayout
-            android:id="@+id/linearPauseAndFinish"
+            android:id="@+id/buttonsLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:weightSum="2"
-            android:visibility="gone"
+            android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:orientation="horizontal">
-
+            app:layout_constraintStart_toStartOf="parent">
 
             <Button
-                android:id="@+id/btnResumeAndPause"
-                android:layout_width="0dp"
-                android:layout_weight="1"
+                android:id="@+id/btnStart"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:padding="10dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
                 android:backgroundTint="@color/blackGrayTrans"
-                android:text="@string/pause"
-                tools:ignore="ButtonStyle" />
-
-
-            <Button
-                android:id="@+id/btnFinish"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
                 android:padding="10dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:backgroundTint="@color/blackGreenTrans"
-                android:text="@string/finish"
-                tools:ignore="ButtonStyle" />
+                android:text="@string/start_run" />
 
+            <LinearLayout
+                android:id="@+id/linearPauseAndFinish"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:weightSum="2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+
+                <Button
+                    android:id="@+id/btnResumeAndPause"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/blackGrayTrans"
+                    android:padding="10dp"
+                    android:text="@string/pause"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="ButtonStyle" />
+
+
+                <Button
+                    android:id="@+id/btnFinish"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/teal_200"
+                    android:padding="10dp"
+                    android:text="@string/finish"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="ButtonStyle" />
+
+
+            </LinearLayout>
 
         </LinearLayout>
 

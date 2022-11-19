@@ -9,16 +9,22 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.codingtester.fitnote.R
+import com.codingtester.fitnote.databinding.FragmentHomeBinding
 import com.codingtester.fitnote.helper.Constants.REQUEST_LOCATION_PERMISSION_CODE
 import com.codingtester.fitnote.helper.TrackingUtility
+import com.codingtester.fitnote.ui.adapter.TapAdapter
 import com.codingtester.fitnote.ui.viewmodels.MainViewModel
+import com.google.android.material.tabs.TabLayoutMediator
+import dagger.hilt.android.AndroidEntryPoint
 import pub.devrel.easypermissions.AppSettingsDialog
 import pub.devrel.easypermissions.EasyPermissions
 
-
+@AndroidEntryPoint
 class HomeFragment : Fragment(), EasyPermissions.PermissionCallbacks {
 
     private val viewModel: MainViewModel by viewModels()
+
+    private lateinit var  binding : FragmentHomeBinding
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,10 +35,27 @@ class HomeFragment : Fragment(), EasyPermissions.PermissionCallbacks {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-
-        return inflater.inflate(R.layout.fragment_home, container, false)
+    ): View {
+        val view = inflater.inflate(R.layout.fragment_home, container, false)
+        binding = FragmentHomeBinding.bind(view)
+        return binding.root
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initTapLayout()
+    }
+
+    private fun initTapLayout() {
+        binding.viewPager.adapter = TapAdapter(requireActivity().supportFragmentManager, lifecycle)
+        val tapTitle = listOf("Tips", "Your Run")
+
+        TabLayoutMediator(binding.tapLayout, binding.viewPager) {
+            tap, position ->
+                tap.text = tapTitle[position]
+        }.attach()
+    }
+
 
     private fun requestPermissions() {
         if(TrackingUtility.hasLocationPermission(requireActivity())) {
