@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/PCM/Desktop/Fitnote/app/src/main/res/drawable/basic_background.xml" value="0.1215" />
+        <entry key="..\:/Users/PCM/Desktop/Fitnote/app/src/main/res/drawable/ic_arrow_back_24.xml" value="0.1605" />
         <entry key="..\:/Users/PCM/Desktop/Fitnote/app/src/main/res/drawable/ic_run_24.xml" value="0.1605" />
         <entry key="..\:/Users/PCM/Desktop/Fitnote/app/src/main/res/drawable/map_background.xml" value="0.1215" />
         <entry key="..\:/Users/PCM/Desktop/Fitnote/app/src/main/res/layout/activity_main.xml" value="0.2" />
@@ -11,8 +12,10 @@
         <entry key="..\:/Users/PCM/Desktop/Fitnote/app/src/main/res/layout/fragment_settings.xml" value="0.1" />
         <entry key="..\:/Users/PCM/Desktop/Fitnote/app/src/main/res/layout/fragment_setup.xml" value="0.18" />
         <entry key="..\:/Users/PCM/Desktop/Fitnote/app/src/main/res/layout/fragment_statistics.xml" value="0.1" />
-        <entry key="..\:/Users/PCM/Desktop/Fitnote/app/src/main/res/layout/fragment_tracking.xml" value="0.33" />
+        <entry key="..\:/Users/PCM/Desktop/Fitnote/app/src/main/res/layout/fragment_tracking.xml" value="0.22" />
         <entry key="..\:/Users/PCM/Desktop/Fitnote/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
+        <entry key="..\:/Users/PCM/Desktop/Fitnote/app/src/main/res/menu/tracking_cancel_menu.xml" value="0.1" />
+        <entry key="..\:/Users/PCM/Desktop/Fitnote/app/src/main/res/menu/tracking_menu.xml" value="0.18" />
       </map>
     </option>
   </component>

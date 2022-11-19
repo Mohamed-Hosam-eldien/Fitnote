@@ -42,8 +42,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.btnStartRun.setOnClickListener {
-            navController.navigate(R.id.action_homeFragment_to_trackingFragment)
+            navController.navigate(R.id.action_goto_trackingFragment)
         }
+
 
     }
 
@@ -58,7 +59,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun navigateToTrackingFragmentFromNotification(intent: Intent?){
         if(intent?.action == ACTION_SHOW_TRACKING_FRAGMENT_FROM_NOTIFICATION){
-            findNavController(R.id.navHost).navigate(R.id.action_notification_to_trackingFragment)
+            findNavController(R.id.navHost).navigate(R.id.action_goto_trackingFragment)
         }
     }
 

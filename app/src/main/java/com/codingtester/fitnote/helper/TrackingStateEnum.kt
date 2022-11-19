@@ -4,5 +4,6 @@ enum class TrackingStateEnum {
     HOLD,
     RUNNING,
     PAUSE,
-    FINISH
+    FINISH,
+    CANCEL
 }
